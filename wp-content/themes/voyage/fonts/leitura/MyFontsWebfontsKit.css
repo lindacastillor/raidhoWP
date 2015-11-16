@@ -1,0 +1,32 @@
+/* @license
+ * MyFonts Webfont Build ID 2532021, 2013-04-16T15:18:47-0400
+ * 
+ * The fonts listed in this notice are subject to the End User License
+ * Agreement(s) entered into by the website owner. All other parties are 
+ * explicitly restricted from using the Licensed Webfonts(s).
+ * 
+ * You may obtain a valid license at the URLs below.
+ * 
+ * Webfont: Leitura-Italic 1 by DSType
+ * URL: http://www.myfonts.com/fonts/dstype/leitura/italic-1/
+ * 
+ * Webfont: Leitura-Roman 1 by DSType
+ * URL: http://www.myfonts.com/fonts/dstype/leitura/roman-1/
+ * 
+ * 
+ * License: http://www.myfonts.com/viewlicense?type=web&buildid=2532021
+ * Webfonts copyright: Copyright (c) 2006 by Dino dos Santos _DSType. All rights reserved.
+ * 
+ * © 2013 MyFonts Inc
+*/
+
+
+/* @import must be at top of file, otherwise CSS will not work */
+@import url("//hello.myfonts.net/count/26a2b5");
+
+  
+@font-face {font-family: 'Leitura-Italic1';src: url('webfonts/26A2B5_0_0.eot');src: url('webfonts/26A2B5_0_0.eot?#iefix') format('embedded-opentype'),url('webfonts/26A2B5_0_0.woff') format('woff'),url('webfonts/26A2B5_0_0.ttf') format('truetype');}
+ 
+  
+@font-face {font-family: 'Leitura-Roman1';src: url('webfonts/26A2B5_1_0.eot');src: url('webfonts/26A2B5_1_0.eot?#iefix') format('embedded-opentype'),url('webfonts/26A2B5_1_0.woff') format('woff'),url('webfonts/26A2B5_1_0.ttf') format('truetype');}
+ 

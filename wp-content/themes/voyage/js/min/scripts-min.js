@@ -1,0 +1,1 @@
+$(document).keypress(function(e){97===e.charCode&&$("#dev_nav").toggle()});
