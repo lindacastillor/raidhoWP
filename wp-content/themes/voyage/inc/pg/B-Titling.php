@@ -12,6 +12,7 @@ if($img){
 	$img_huge = wp_get_attachment_image_src($img, 'full-size');
 
 	echo '<div id="bg-'. $titBgID .'" class="back_img_quote"><div class="wrap">';
+
 	echo '<style> #bg-'.$titBgID.' {background-image: url(' . $img_med[0] . ');';
 	if($bgClr) {
 		echo '} #bg-'.$titBgID.':before {background-color:'.$bgClr;

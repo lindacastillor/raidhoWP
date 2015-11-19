@@ -7,50 +7,15 @@
 	$bclass = "page";
 	get_header();
 
-global $post;
-$post_slug=$post->post_name;
-$titBgID = A; ?>
+	global $post;
+	$post_slug=$post->post_name;
+	$titBgID = A;
 
 
-<section id="<?php echo $post_slug; ?>"><?php
+	while ( have_rows('intro') ) { the_row();
+		get_template_part('inc/pg/H', 'Titling');
+	}
 
-while ( have_rows('intro') ) : the_row();
-
-	get_template_part('inc/pg/A', 'Intro');
-/*
-	elseif( get_row_layout() == 'titling' ):
-		get_template_part('inc/pg/B', 'Titling');
-
-	elseif( get_row_layout() == 'list' ) :
-		get_template_part('inc/pg/C', 'List');
-
-	elseif( get_row_layout() == 'form' ):
-		get_template_part('inc/pg/D', 'Form');
-
-	elseif( get_row_layout() == 'slider' ):
-		get_template_part('inc/pg/E', 'Slider');
-
-	elseif( get_row_layout() == 'big-image' ):
-		get_template_part('inc/pg/F', 'BigImage');
-
-	elseif( get_row_layout() == 'from-log' ):
-		get_template_part('inc/pg/G', 'FromLog');
-
-	elseif( get_row_layout() == 'two-cols' ):
-		get_template_part('inc/pg/H', 'TwoCols');
-
-	elseif( get_row_layout() == 'members' ):
-		get_template_part('inc/pg/I', 'Members');
-
-	elseif( get_row_layout() == 'more' ):
-		get_template_part('inc/pg/J', 'More');
-	endif;
-*/
-endwhile; ?>
-
-</section><?php
-
-	get_template_part('inc/extended_nav');
 
 	$post = get_field('ftd-project', 'options');
 	$random = array_rand($post, 1);
@@ -60,5 +25,36 @@ endwhile; ?>
 		get_template_part('inc/feat_project');
 	}
 	wp_reset_postdata();
+
+
+	get_template_part('inc/pg/H', 'Slider'); ?>
+
+
+<section id="loader" class="wrap">
+	<h2 class="Decima">Recent Activity</h2>
+	<ul class="log masonry" style="position: relative; height: 1401.58px;">
+		<!-- Masonry gutter sizer -->
+		<li class="masonry_gutter"></li>
+		<!-- Masonry columnWidth sizer -->
+		<li class="masonry_column"></li>
+		<!-- Masonry items --><?php
+
+		$recentQ = new WP_Query(
+			array(
+				'post_type' => array( 'post', 'blog', 'work' ),
+				'posts_per_page' => 12,
+				'paged' => get_query_var( 'paged' )
+			)
+		);
+
+		while ( $recentQ->have_posts() ) { $recentQ->the_post();
+			get_template_part('inc/log_cards');
+		}
+		wp_reset_postdata(); ?>
+	</ul>
+</section><?php
+
+	get_template_part('inc/extended_nav');
+
 
 get_footer(); ?>
