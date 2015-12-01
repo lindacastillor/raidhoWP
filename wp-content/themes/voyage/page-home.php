@@ -17,9 +17,9 @@
 	}
 
 
-	$post = get_field('ftd-project', 'options');
-	$random = array_rand($post, 1);
-	$the_query = new WP_Query( array( 'post_type' => 'work', 'p' => $post[$random], 'posts_per_page' => 1 ) );
+	$poste = get_field('ftd-project', 'options');
+	$random = array_rand($poste, 1);
+	$the_query = new WP_Query( array( 'post_type' => 'work', 'p' => $poste[$random], 'posts_per_page' => 1 ) );
 	while ( $the_query->have_posts() ) {
 		$the_query->the_post();
 		get_template_part('inc/feat_project');

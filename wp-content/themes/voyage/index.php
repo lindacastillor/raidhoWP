@@ -8,15 +8,15 @@ Neue Raidho Website
 get_header();
 
 
-	if ( have_posts() ) :
-		echo '<ul>';
-		while ( have_posts() ) : the_post();
-
-			echo '<li><a href="'.get_permalink().'">'.get_title().'</a></li>';
-
-		endwhile;
-		echo '</ul>';
-	endif;
+	// if ( have_posts() ) :
+	// 	echo '<ul>';
+	// 	while ( have_posts() ) : the_post();
+	//
+	// 		echo '<li><a href="'.get_permalink().'">'.get_title().'</a></li>';
+	//
+	// 	endwhile;
+	// 	echo '</ul>';
+	// endif;
 
 
 /*  Pre Theme
