@@ -40,8 +40,16 @@ Neue Raidho Website
 	// 3 else (none)
 	else :
 		// echo 'none';
-	endif; ?>
+	endif;
 
+
+
+
+	while(have_rows('shortcuts')) {
+		the_row();
+		$has_shct = get_sub_field('link');
+	}
+	if(!empty($has_shct)) : ?>
 
 		<div class="e_nav_bottom gray_light_bg">
 			<div class="wrap"><?php
@@ -75,6 +83,8 @@ Neue Raidho Website
 				wp_reset_postdata();
 			endwhile; ?>
 			</div>
-		</div>
+		</div><?php
+
+	endif; ?>
 
 	</div>
