@@ -39,7 +39,13 @@
 
 
 		if($postType == 'work') {
-			echo '<p class="small_title"><a href="'.get_the_permalink().'"><span class="red">New Project:</span> '.get_the_title().'</a></p>';
+			echo '<p class="small_title"><a href="'.get_the_permalink().'">';
+			if(get_field('new')){
+				echo '<span class="red">New Project:</span> ';
+			} else {
+				echo '<span class="red">Project:</span> ';
+			}
+			echo get_the_title().'</a></p>';
 		} elseif($postType == 'blog') {
 			echo '<p><a href="'.get_the_permalink().'">'.get_the_title().'</a></p>';
 		} else {
