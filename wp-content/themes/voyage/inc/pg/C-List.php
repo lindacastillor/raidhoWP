@@ -11,11 +11,11 @@ while(have_rows('element')) : the_row(); ?>
 
 			<div class="basic_grid two_col_grid">
 				<div>
-					<div class="Leitura medium_title"><?php the_sub_field('content'); ?></div>
+					<div><?php the_sub_field('content'); ?></div>
 				</div>
 				<div>
 					<h4 class="Decima"><?php the_sub_field('service-title'); ?></h4>
-					<div class="small_title Decima bullet_list"><?php the_sub_field('service-content'); ?></div>
+					<div><?php the_sub_field('service-content'); ?></div>
 				</div>
 			</div><?php
 

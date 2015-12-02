@@ -14,6 +14,8 @@
 			get_template_part('inc/log_filter'); ?>
 		</ul>
 	</div>
+
+
 	<ul class="log masonry">
 		<!-- Masonry gutter sizer -->
 		<li class="masonry_gutter"></li>
@@ -38,6 +40,4 @@
 <?php
 
 	get_template_part('inc/extended_nav');
-	$shtct = get_field('shortcuts');
-	print_r($shtct);
 	get_footer(); ?>

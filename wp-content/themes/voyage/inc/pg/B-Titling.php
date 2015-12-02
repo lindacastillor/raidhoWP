@@ -12,6 +12,7 @@ if($img){
 	$img_huge = wp_get_attachment_image_src($img, 'full-size');
 
 	echo '<div id="bg-'. $titBgID .'" class="back_img_quote"><div class="wrap">';
+
 	echo '<style> #bg-'.$titBgID.' {background-image: url(' . $img_med[0] . ');';
 	if($bgClr) {
 		echo '} #bg-'.$titBgID.':before {background-color:'.$bgClr;
@@ -32,10 +33,10 @@ if($img){
 
 		<div><?php
 			if(get_sub_field('title')) {
-				echo '<div class="blue Decima">'.get_sub_field('title').'</div>';
+				echo '<p class="blue Decima">'.get_sub_field('title').' <span class="replica">→</span></p>';
 			}
 			if(get_sub_field('content')) {
-				echo '<div class="Leitura medium_title">'.get_sub_field('content').'</div>';
+				echo '<div class="Leitura medium_title full_width_message">'.get_sub_field('content').'</div>';
 			} ?>
 		</div>
 	</div>

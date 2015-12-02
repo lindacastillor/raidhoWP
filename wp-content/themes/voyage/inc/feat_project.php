@@ -1,9 +1,19 @@
-<section class="feat_project">
+<?php
+
+if(is_page('about') /*|| is_page('contact')*/) {
+	$class = 'feat_project_small';
+} else {
+	$class = 'feat_project';
+} ?>
+
+<section class="<?php echo $class; ?>">
 	<div class="wrap">
 		<div class="feat_project_info">
-			<h2><span class="white">Featured Project:</span> <?php the_title(); ?></h2>
-			<p class="Decima"><?php the_field('excerpt'); ?></p>
-			<p class="Decima white"><a href="#">Read the full story →</a></p>
+			<h2><span class="white">Featured Project:</span> <?php the_title(); ?></h2><?php
+			if( is_page('about') /*|| is_page('contact')*/ ) {} else { ?>
+				<p class="Decima"><?php the_field('excerpt'); ?></p><?php
+			} ?>
+			<p class="Decima white"><a href="<?php the_permalink(); ?>">Read the full story →</a></p>
 		</div>
 	</div>
 	<div class="transp_back_image" id="ftdBgImg-<?php echo $titBgID; ?>"></div><?php

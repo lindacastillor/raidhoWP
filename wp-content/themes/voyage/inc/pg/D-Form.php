@@ -1,4 +1,4 @@
-<div class="contact-banner section_pad">
+<div class="contact-banner section_pad contact_complex">
 	<div class="wrap bl-party-share"><?php
 
 		if(is_singular('work')) { ?>
