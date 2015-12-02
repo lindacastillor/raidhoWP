@@ -33,10 +33,10 @@ if($img){
 
 		<div><?php
 			if(get_sub_field('title')) {
-				echo '<div class="blue Decima">'.get_sub_field('title').'</div>';
+				echo '<p class="blue Decima">'.get_sub_field('title').' <span class="replica">→</span></p>';
 			}
 			if(get_sub_field('content')) {
-				echo '<div class="Leitura medium_title">'.get_sub_field('content').'</div>';
+				echo '<div class="Leitura medium_title full_width_message">'.get_sub_field('content').'</div>';
 			} ?>
 		</div>
 	</div>

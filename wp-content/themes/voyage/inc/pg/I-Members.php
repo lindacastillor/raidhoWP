@@ -1,4 +1,4 @@
-<div class="wrap">
+<div class="wrap section_pad">
 	<h2 class="Decima">People at Raidho</h2><?php
 
 

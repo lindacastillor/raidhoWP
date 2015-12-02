@@ -4,7 +4,7 @@
 			echo '<h2 class="Decima">'.get_sub_field('kicker').'</h2>';
 		}
 		if(get_sub_field('content')){
-			echo '<h1 class="Leitura">'.get_sub_field('content').'</h1>';
+			echo '<h1 class="Leitura full_width_message">'.get_sub_field('content').'</h1>';
 		} ?>
 	</div>
 </div><?php
@@ -22,6 +22,7 @@ if($image) { ?>
 		</picture>
 	</div><?php
 
-} else {
+}
+if(get_sub_field('hr')) {
 	echo '<hr>';
 } ?>
