@@ -1,7 +1,7 @@
 <?php
 
 global $titBgID;
-$img = get_sub_field('bg-img');
+$image = get_sub_field('bg-img');
 $bgClr = get_sub_field('bg-color'); ?>
 
 
@@ -12,6 +12,9 @@ $bgClr = get_sub_field('bg-color'); ?>
 		</div>
 	</div><?php
 
+	imgCaption($image);
+
+	$img = $image['ID'];
 	if($img){
 		$img_med = wp_get_attachment_image_src($img, 'medium');
 		$img_large = wp_get_attachment_image_src($img, 'large');

@@ -1,8 +1,10 @@
 <?php
 
 global $titBgID;
-$img = get_sub_field('bg-img');
+$image = get_sub_field('bg-img');
 $bgClr = get_sub_field('bg-color');
+
+$img = $image['ID'];
 
 if($img){
 	$img_med = wp_get_attachment_image_src($img, 'medium');
@@ -39,5 +41,6 @@ if($img){
 				echo '<div class="Leitura medium_title full_width_message">'.get_sub_field('content').'</div>';
 			} ?>
 		</div>
-	</div>
+	</div><?php
+	imgCaption($image); ?>
 </div>
