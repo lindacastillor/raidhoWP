@@ -26,7 +26,7 @@
 		query_posts(
 			array(
 				'post_type' => array( 'post', 'blog', 'work' ),
-				'posts_per_page' => 50,
+				'posts_per_page' => 12,
 				'paged' => get_query_var( 'paged' )
 			)
 		);
@@ -35,9 +35,13 @@
 		}
 		wp_reset_postdata(); ?>
 	</ul>
-</section>
+</section><?php
 
-<?php
+	$archQ = new WP_Query( 'post_type=page&pagename=recent' );
+	while ( $archQ->have_posts() ) {
+	$archQ->the_post();
+		get_template_part('inc/extended_nav');
+	}
+	wp_reset_postdata();
 
-	get_template_part('inc/extended_nav');
 	get_footer(); ?>

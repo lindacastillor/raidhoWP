@@ -11,15 +11,15 @@ Neue Raidho Website
 		<div>
 
 			<script type="text/javascript">
-				$(function () {
-					// $(".tabbed-slider").responsiveSlides({
-					// 	pager: false,
-					// 	auto: false,
-					// 	prevText: "-",
-					// 	nextText: "-",
-					// 	nav: true,
-					// 	manualControls: '.tabs-pager'
-					// });
+				$(function () { <?php /*
+					$(".tabbed-slider").responsiveSlides({
+						pager: false,
+						auto: false,
+						prevText: "-",
+						nextText: "-",
+						nav: true,
+						manualControls: '.tabs-pager'
+					}); */ ?>
 					$("#slider1").responsiveSlides({
 						pager: false,
 						auto: false,
@@ -55,17 +55,17 @@ Neue Raidho Website
 							<li><?php
 
 							global $titBgID;
-							$img = get_sub_field('img');
+							$image = get_sub_field('img');
 
-							if($img){
-								$img_large = wp_get_attachment_image_src($img, 'large');
-								$img_larger = wp_get_attachment_image_src($img, 'larger');
-								$img_largest = wp_get_attachment_image_src($img, 'largest');
+							if($image){
+								$img_large = $image['sizes']['large'];
+								$img_larger = $image['sizes']['larger'];
+								$img_largest = $image['sizes']['largest'];
 
 								echo '<div class="image" id="slbg-'.$titBgID.'">
-									<style> #slbg-'.$titBgID.' {background-image: url(' . $img_large[0] . ');}';
-								if($img_large) { echo ' @media (min-width: 1024px) { #slbg-'.$titBgID.' {background-image: url(' . $img_larger[0] . ');} }'; }
-								if($img_larger) { echo ' @media (min-width: 1400px) { #slbg-'.$titBgID++.' {background-image: url(' . $img_largest[0] . ');} }'; }
+									<style> #slbg-'.$titBgID.' {background-image: url(' . $img_large . ');}';
+								if($img_large) { echo ' @media (min-width: 1024px) { #slbg-'.$titBgID.' {background-image: url(' . $img_larger . ');} }'; }
+								if($img_larger) { echo ' @media (min-width: 1400px) { #slbg-'.$titBgID++.' {background-image: url(' . $img_largest . ');} }'; }
 								echo '</style>
 								</div>';
 
@@ -77,7 +77,16 @@ Neue Raidho Website
 										<h2><span class="red"><?php the_sub_field('title'); ?>:</span> <?php the_sub_field('heading'); ?></h2>
 										<p class="Decima"><?php the_sub_field('content'); ?></p><?php
 										// if is post object:
-										// <p><span class="Decima gray">Read the full story</span></p> ?>
+										if($image['caption'] || $image['title']) {
+											echo '<p><span class="Decima gray">';
+											if($image['title']){
+												echo $image['title'].'. ';
+											}
+											if($image['caption']){
+												echo $image['caption'].'.';
+											}
+											echo '</span></p>';
+										} ?>
 									</div>
 								</div>
 							</li><?php

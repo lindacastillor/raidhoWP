@@ -22,25 +22,7 @@ if( !empty($image) ): ?>
 
 			 alt="<?php echo $image['title']; ?>" /><?php
 
-
-			if($image['caption'] || $image['title']) :
-				echo '<div class="Decima caption">';
-
-				if($image['alt']){
-					echo '<a href="'.$image['alt'].'" target="_blank">';
-				}
-				if($image['title']){
-					echo '<span>'.$image['title'].'</span>';
-				}
-				if($image['caption']){
-					echo $image['caption'];
-				}
-				if($image['alt']){
-					echo '</a>';
-				}
-				echo '</div>';
-
-			endif; ?>
+			 imgCaption($image); ?>
 
 	</picture><?php
 

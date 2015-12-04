@@ -25,11 +25,13 @@ while(have_rows('element')) : the_row(); ?>
 				<div class="bl-party-two-w-captions">
 					<ul><?php
 						foreach( $images as $image ): ?>
-						<li>
-							<?php // <a href="#"> ?>
+						<li><?php
+							if($image['alt']){
+								echo '<a href="'.$image['alt'].'">';
+							} ?>
 								<picture>
 									<img class="full_width_image"
-										 src="<?php echo $image['sizes']['larger']; ?>"
+										 src="<?php echo $image['sizes']['large']; ?>"
 										 <?php echo tevkori_get_srcset_string( $image['ID'], 'largest' ); ?>
 										 alt="<?php echo $image['alt']; ?>" />
 								</picture><?php
@@ -37,8 +39,10 @@ while(have_rows('element')) : the_row(); ?>
 								if($image['caption']) {
 									echo ' <span class="Leitura">'. $image['caption'] .'</span>';
 								}
-								echo '</p>'; ?>
-							<?php //</a> ?>
+								echo '</p>';
+							if($image['alt']){
+								echo '</a>';
+							} ?>
 						</li><?php
 						endforeach; ?>
 					<ul>
