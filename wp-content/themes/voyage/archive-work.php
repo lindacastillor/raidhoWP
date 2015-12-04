@@ -103,5 +103,11 @@ get_header();
 
 </section><?php
 
-	get_template_part('inc/extended_nav');
+
+
+	$archQ = new WP_Query( 'page_id=4196' );
+	while ( $archQ->have_posts() ) {
+		$archQ->the_post();
+		get_template_part('inc/extended_nav');
+	}
 	get_footer(); ?>

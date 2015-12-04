@@ -12,7 +12,7 @@
 			if(is_archive('blog')){
 				echo 'Blog';
 			} else {
-				echo single_cat_title( '', true ); 
+				echo single_cat_title( '', true );
 			} ?></h2>
 		<ul class="log_filter">
 			<span class="Decima">Filter: </span><?php
@@ -38,11 +38,11 @@
 
 </section><?php
 
-/*
-Extended Nav + Footer
-*/
+	$query1 = new WP_Query( 'post_type=page&pagename=recent' );
+	while ( $query1->have_posts() ) {
+	$query1->the_post();
+		get_template_part('inc/extended_nav');
+	}
+	wp_reset_postdata();
 
-get_template_part('inc/extended_nav');
-get_footer();
-
-?>
+	get_footer(); ?>
