@@ -43,48 +43,43 @@ Neue Raidho Website
 	endif;
 
 
-
-
-	while(have_rows('shortcuts')) {
-		the_row();
-		$has_shct = get_sub_field('link');
-	}
-	if(!empty($has_shct)) : ?>
+	if(have_rows('shortcuts')) : ?>
 
 		<div class="e_nav_bottom gray_light_bg">
 			<div class="wrap"><?php
 			$n = 2;
+
+
 			while(have_rows('shortcuts')) :
 				the_row();
-				$orExcerpt = get_sub_field('or-excerpt');
-				$post = get_sub_field('link');
-				setup_postdata($post);
 
-				$img = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'medium'); ?>
+				$orExcerpt = get_sub_field('or-excerpt');
+				$pShtct = get_sub_field('link');
+
+
+				$img = wp_get_attachment_image_src( get_post_thumbnail_id($pShtct->ID), 'medium'); ?>
 
 				<div class="e_nav<?php echo $n++; ?>">
-					<a class="nav2_bttn" href="<?php the_permalink(); ?>">
+					<a class="nav2_bttn" href="<?php echo post_permalink( $pShtct->ID ); ?>">
 						<div style="background-image: url(<?php echo $img[0]; ?>)">
 						</div>
 						<div>
-							<h4><?php the_title(); ?></h4>
+							<h4><?php echo $pShtct->post_title; ?></h4>
 							<div class="Decima"><?php
-							if($orExcerpt){
-								echo $orExcerpt;
-							} else {
-								the_field('excerpt');
-							} ?><br>
-							<span class="red">Continue to <?php the_title(); ?> →</span></div>
+								if($orExcerpt){
+									echo $orExcerpt;
+								} else {
+									the_field('excerpt', $pShtct->ID);
+								} ?>
+								<span class="phone_hide red">Continue to <?php echo $pShtct->post_title; ?> →</span>
+							</div>
 						</div>
 					</a>
 				</div><?php
 
-
-				wp_reset_postdata();
 			endwhile; ?>
 			</div>
 		</div><?php
-
-	endif; ?>
+	endif;	?>
 
 	</div>
