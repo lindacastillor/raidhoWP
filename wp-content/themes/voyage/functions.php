@@ -50,3 +50,29 @@
 		}
 	}
 	add_action('pre_get_posts', 'exclude_single_posts_home');
+
+
+
+
+/*
+ * Image Captions
+ */
+
+	function imgCaption($image) {
+		if($image['caption'] || $image['title']) :
+			print '<div class="Decima caption">';
+			if($image['alt']){
+				print '<a href="'.$image['alt'].'" target="_blank">';
+			}
+			if($image['title']){
+				print '<span>'.$image['title'].'</span> ';
+			}
+			if($image['caption']){
+				print $image['caption'];
+			}
+			if($image['alt']){
+				print '</a>';
+			}
+			print '</div>';
+		endif;
+	}
