@@ -546,14 +546,29 @@ header + .wrap {
   width: 48.57143%;
   float: left;
   margin-right: 2.85714%; }
+  @media (max-width: 620px) {
+    .contact_complex form ul > div:first-child {
+      width: 100%;
+      float: left;
+      margin-left: 0;
+      margin-right: 0; } }
   .contact_complex form ul > div:first-child li {
     width: 45%; }
+    @media (max-width: 900px) {
+      .contact_complex form ul > div:first-child li {
+        width: 100%; } }
     .contact_complex form ul > div:first-child li input {
       width: 100%; }
 .contact_complex form ul > div:last-child {
   width: 48.57143%;
   float: right;
   margin-right: 0; }
+  @media (max-width: 620px) {
+    .contact_complex form ul > div:last-child {
+      width: 100%;
+      float: left;
+      margin-left: 0;
+      margin-right: 0; } }
   .contact_complex form ul > div:last-child li {
     width: 100%; }
     .contact_complex form ul > div:last-child li textarea {
