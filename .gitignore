@@ -22,3 +22,6 @@ readme.html
 license.txt
 .log
 .DS_Store
+
+# Ignore local SASS files #
+sass/*
