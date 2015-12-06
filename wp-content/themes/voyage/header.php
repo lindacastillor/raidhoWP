@@ -39,7 +39,7 @@ Neue Raidho Website
 	<header>
 
 		<div class="wrap">
-			<h3 id="nav_logo"><a href="<?php echo esc_url(home_url()); ?>"><span><img src="<?php bloginfo('template_url'); ?>/img/simbolo_raidho.svg"></span> RAIDHO</a></h3>
+			<h3 id="nav_logo"><a href="<?php echo esc_url(home_url()); ?>"><span><img src="<?php bloginfo('template_url'); ?>/img/simbolo_raidho.svg"></span><img src="<?php bloginfo('template_url'); ?>/img/logo-raidho.svg"></a></h3>
 
 			<a id="mobile_nav_toggl" class="Decima" href="#">&#9776;</a>
 			<script>

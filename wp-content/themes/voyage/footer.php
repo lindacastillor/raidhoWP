@@ -17,43 +17,42 @@ Neue Raidho Website
 						$info = get_sub_field('info');
 						$medium = get_sub_field('medium');
 						if($medium == 'mail') :
-							echo 'Mail: <a class="red" href="mailto:'.$info.'">'.$info.'</a><br>';
+							echo '<span class="phone_hide">Mail: </span><a class="red" href="mailto:'.$info.'">'.$info.'</a><br>';
 
 						elseif($medium == 'phone') :
-							echo 'Phone: <a class="red" href="tel:'.$info.'">'.$info.'</a><br>';
+							echo '<span class="phone_hide">Phone: </span> <a class="red" href="tel:'.$info.'">'.$info.'</a><br>';
 
 						elseif($medium == 'skype') :
-							echo 'Skype: <a class="red" href="skype:'.$info.'?chat">'.$info.'</a><br>';
+							echo '<span class="phone_hide">Skype: </span><a class="red" href="skype:'.$info.'?chat">'.$info.'</a><br>';
 
 						endif;
 					endwhile; ?>
 				</li>
-				<li><?php
+				<li><div><?php
 					while(have_rows('social-m', 'options')) :
 						the_row();
 						$info = get_sub_field('info');
 						$medium = get_sub_field('medium');
 						if($medium == 'behance') :
-							echo '<a href="'.$info.'">Behance</a><br>';
+							echo '<span><a href="'.$info.'">Behance</a></span>';
 
 						elseif($medium == 'facebook') :
-							echo '<a href="'.$info.'">Facebook</a><br>';
+							echo '<span><a href="'.$info.'">Facebook</a></span>';
 
 						elseif($medium == 'instagram') :
-							echo '<a href="'.$info.'">Instagram</a><br>';
+							echo '<span><a href="'.$info.'">Instagram</a></span>';
 
 						elseif($medium == 'dribble') :
-							echo '<a href="'.$info.'">Dribbble</a><br>';
+							echo '<span><a href="'.$info.'">Dribbble</a></span>';
 
 						elseif($medium == 'twitter') :
-							echo '<a href="'.$info.'">Twitter</a><br>';
+							echo '<span><a href="'.$info.'">Twitter</a></span>';
 
 						elseif($medium == 'github') :
-							echo '<a href="'.$info.'">Github</a><br>';
-
+							echo '<span><a href="'.$info.'">Github</a></span>';
 						endif;
 					endwhile; ?>
-				</li>
+				</div></li>
 			</ul>
 			<p class="Leitura">All rights reserved &copy;Raidho <?php the_time('Y'); ?>.<br>
 			See our <a href="<?php echo esc_url(home_url('/privacy')); ?>">Privacy Statement</a> (<i>ver el <a href="<?php echo esc_url(home_url('/privacy')); ?>">Aviso de Privacidad</a></i>).
