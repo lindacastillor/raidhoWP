@@ -66,67 +66,47 @@ Missing:
 			get_template_part('inc/sn/A', 'images');
 
 		elseif( get_row_layout() == 'titling' ) :
-			get_template_part('inc/pg/B', 'titling');
-
-			/* Use Page Module
-			if(get_sub_field('bg-img')) {
-				$img = get_sub_field('bg-img');
-				$bgClr = get_sub_field('bg-color');
-
-				$img_med = wp_get_attachment_image_src($img, 'medium');
-				$img_large = wp_get_attachment_image_src($img, 'large');
-				$img_larger = wp_get_attachment_image_src($img, 'larger');
-				$img_largest = wp_get_attachment_image_src($img, 'largest');
-				$img_huge = wp_get_attachment_image_src($img, 'full-size');
-
-				if($img){
-					echo '<style> #bg-'.$A.' {background-image: url(' . $img_med[0] . ');';
-					if($bgClr) {
-						echo '} #bg-'.$A.':before {background-color:'.$bgClr;
-					}
-					echo '}';
-					if($img_med) { echo ' @media (min-width: 600px) { #bg-'.$A.' {background-image: url(' . $img_large[0] . ');} }'; }
-					if($img_large) { echo ' @media (min-width: 1024px) { #bg-'.$A.' {background-image: url(' . $img_larger[0] . ');} }'; }
-					if($img_larger) { echo ' @media (min-width: 1400px) { #bg-'.$A.' {background-image: url(' . $img_largest[0] . ');} }'; }
-					if($img_largest) { echo ' @media (min-width: 1800px) { #bg-'.$A.' {background-image: url(' . $img_huge[0] . ');} }'; }
-					echo '</style>';
-				}
-				echo '<div id="bg-'. $A++ .'" class="back_img_quote">';
-			} ?>
-				<div class="wrap">
-					<div>
-						<p class="blue Decima"><?php the_sub_field('title'); ?></p>
-						<p class="Leitura medium_title"><?php the_sub_field('content'); ?></p>
-					</div>
-				</div><?php
-			if(get_sub_field('bg-img')) {
-				echo '</div>';
-			} */
-
+			get_template_part('inc/pg/B', 'Titling');
 
 		endif;
-	endwhile;
+	endwhile; ?>
 
 
+	<div class="contact-banner section_pad">
+		<div class="wrap bl-party-share">
+			<h2 class="Leitura">Share this project:</h2><?php
+			get_template_part('inc/sharer'); ?>
 
-	get_template_part('inc/contact_share');
-	// more projects ?>
+			<h2 class="Leitura"><?php the_field('work_ct_title', 'options'); ?></h2><?php
+			the_field('work_ct_form', 'options'); ?>
+		</div>
+	</div>
+
+
 	<section class="gray_light_bg">
-	    <div class="wrap bl-party-three-w-captions">
-	        <h2 class="Decima">Explore More Projects</h2>
-	        <ul>
-	            <li>
-	                <img src="http://lorempixel.com/380/380/technics">
-	                <p>Penguin Books. <span class="Leitura">An Expanding Universe Keynote.</span></p>
-	            </li>
-	            <li>
-	                <img src="http://lorempixel.com/380/380/technics">
-	                <p>Comunidad VIVEX. <span class="Leitura">Re-defining the News in Mexico.</span></p>
-	            </li>
-	            <li>
-	                <img src="http://lorempixel.com/380/380/technics">
-	                <p>Knock your Wear. <span class="Leitura">Professional Image Consulting.</span></p>
-	            </li>
-	        <ul>
-	    </div>
+		<div class="wrap bl-party-three-w-captions">
+			<h2 class="Decima">Explore More Projects</h2>
+			<ul><?php
+			$logQ = new WP_Query( array(
+					'post_type' => 'work',
+					'posts_per_page' => 3,
+					'orderby' => 'rand',
+					'paged' => get_query_var( 'paged' )
+				)
+			);
+			while ( $logQ->have_posts() ) { $logQ->the_post();
+				$thumbID = get_post_thumbnail_id( $post_id );
+				$thumb = wp_get_attachment_image_src($thumbID, 'large'); ?>
+				<li>
+					<a href="<?php the_permalink(); ?>"><?php
+						if($thumb) {
+							echo '<img src="'. $thumb[0] .'" alt="">';
+						} ?>
+						<p><?php the_title(); ?><span class="Leitura"><?php the_field('subtitle'); ?></span></p>
+					</a>
+				</li><?php
+			}
+			wp_reset_postdata(); ?>
+			<ul>
+		</div>
 	</section>

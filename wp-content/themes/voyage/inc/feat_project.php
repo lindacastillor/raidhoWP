@@ -20,7 +20,8 @@
 	</div>
 	<div class="transp_back_image" id="ftdBgImg-<?php echo $titBgID; ?>"><?php
 
-		$img = get_field('hzn_image');
+		$image = get_field('hzn_image');
+		$img = $image['ID'];
 
 		if($img){
 			$img_large = wp_get_attachment_image_src($img, 'large');

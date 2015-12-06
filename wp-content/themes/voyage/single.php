@@ -6,7 +6,10 @@
 		if(is_singular('work')) :
 			get_template_part('inc/single', 'work');
 
-		elseif(get_post_type(get_the_ID()) == "blogpost") :
+		elseif(is_singular('post')) :
+			get_template_part('inc/single', 'log');
+
+		elseif(is_singular('blog')) :
 			get_template_part('inc/single', 'blog');
 
 		else :
