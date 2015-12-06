@@ -25,3 +25,6 @@ license.txt
 
 # Ignore local SASS files #
 sass/*
+
+# Ignore Codekit Config #
+config.codekit
