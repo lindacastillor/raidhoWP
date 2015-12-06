@@ -1247,7 +1247,7 @@ div.main_banner .slider_container {
     div.main_banner .slider_container li .gray {
       color: #cbcbcb; }
     div.main_banner .slider_container li .gray:before {
-      content: "← ";
+      content: "← ";
       color: #434343; }
 div.main_banner ul.tabs-pager {
   margin-left: auto;
