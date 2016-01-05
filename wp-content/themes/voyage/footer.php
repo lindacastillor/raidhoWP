@@ -60,7 +60,7 @@ Neue Raidho Website
 		</div>
 	</footer>
 
-	<?php include'js/after.js'; ?>
+	<script src="<?php bloginfo('template_url'); ?>/js/after.js"></script>
 
 	<?php wp_footer(); ?>
 
