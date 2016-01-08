@@ -25,7 +25,9 @@
 						setup_postdata($post); ?>
 
 						<li id="rslides1_s0" class="" style="display: table; float: none; position: absolute; opacity: 0; z-index: 1; transition: opacity 500ms ease-in-out;"><?php
-							$img = get_post_thumbnail_id($post->ID);
+
+							$image = get_field('hzn_image');
+							$img = $image['ID'];
 							if($img){
 								$img_large = wp_get_attachment_image_src($img, 'large');
 								$img_larger = wp_get_attachment_image_src($img, 'larger');
