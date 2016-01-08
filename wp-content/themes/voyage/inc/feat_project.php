@@ -4,6 +4,8 @@
 
 	if(is_page('about') /*|| is_page('contact')*/) {
 		$class = 'feat_project_small';
+	} elseif( !is_home() ) {
+		$class = 'feat_project feat_project_home';
 	} else {
 		$class = 'feat_project';
 	} ?>

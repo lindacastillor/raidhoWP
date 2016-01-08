@@ -673,6 +673,7 @@ h1.full_width_message {
 
 /* Home */
 .home_cover {
+  opacity: 0;
   min-height: 33.75em; }
   @media (max-width: 620px) {
     .home_cover {
@@ -682,6 +683,8 @@ h1.full_width_message {
   width: 82.85714%;
   float: left;
   margin-right: 2.85714%; }
+  .home_cover_info h1 {
+    opacity: 0; }
   @media (max-width: 620px) {
     .home_cover_info {
       width: 100%;
@@ -1267,7 +1270,7 @@ footer ul {
     width: 100%; } }
 
 /* Alternative Setup */
-.bg_img, div.main_banner .slider_container #slider1 li .image, div.main_banner .slider_container #slider3 li > a .image, .wide_slider li .image {
+.bg_img, div.main_banner .slider_container li .image, div.main_banner .slider_container #slider3 li > a .image, .wide_slider li .image {
   -moz-background-size: cover;
   -o-background-size: cover;
   -webkit-background-size: cover;
@@ -1302,24 +1305,24 @@ ul.tabs-pager, ul.dots-pager {
 div.main_banner .slider_container {
   position: relative;
   overflow: hidden; }
-  div.main_banner .slider_container #slider1 li, div.main_banner .slider_container #slider3 li {
+  div.main_banner .slider_container li, div.main_banner .slider_container #slider3 li {
     height: 28.75em;
     cursor: pointer; }
   div.main_banner .slider_container #slider3 li > a {
     height: 100%; }
-  div.main_banner .slider_container #slider1 li, div.main_banner .slider_container #slider3 li > a {
+  div.main_banner .slider_container li, div.main_banner .slider_container #slider3 li > a {
     position: relative;
     overflow: hidden;
     width: 100%;
     display: table; }
-    div.main_banner .slider_container #slider1 li > div, div.main_banner .slider_container #slider3 li > a > div {
+    div.main_banner .slider_container li > div, div.main_banner .slider_container #slider3 li > a > div {
       width: 50%;
       height: 100%;
       display: table-cell;
       vertical-align: top;
       position: relative;
       overflow: hidden; }
-    div.main_banner .slider_container #slider1 li .image, div.main_banner .slider_container #slider3 li > a .image {
+    div.main_banner .slider_container li .image, div.main_banner .slider_container #slider3 li > a .image {
       -webkit-transition: all 0.1s ease-in-out;
       -moz-transition: all 0.1s ease-in-out;
       -ms-transition: all 0.1s ease-in-out;
@@ -1329,16 +1332,16 @@ div.main_banner .slider_container {
       -ms-transform: scale(1);
       -webkit-transform: scale(1);
       transform: scale(1); }
-    div.main_banner .slider_container #slider1 li .txt, div.main_banner .slider_container #slider3 li > a .txt {
+    div.main_banner .slider_container li .txt, div.main_banner .slider_container #slider3 li > a .txt {
       padding: 2em 6em 4em 2em; }
-    div.main_banner .slider_container #slider1 li p, div.main_banner .slider_container #slider3 li > a p {
+    div.main_banner .slider_container li p, div.main_banner .slider_container #slider3 li > a p {
       margin-bottom: 0; }
-    div.main_banner .slider_container #slider1 li span.Decima, div.main_banner .slider_container #slider1 li span.btn, div.main_banner .slider_container #slider1 li section.lightbox .content span.info, section.lightbox .content div.main_banner .slider_container #slider1 li span.info, div.main_banner .slider_container #slider3 li > a span.Decima, div.main_banner .slider_container #slider3 li > a span.btn, div.main_banner .slider_container #slider3 li > a section.lightbox .content span.info, section.lightbox .content div.main_banner .slider_container #slider3 li > a span.info {
+    div.main_banner .slider_container li span.Decima, div.main_banner .slider_container li span.btn, div.main_banner .slider_container li section.lightbox .content span.info, section.lightbox .content div.main_banner .slider_container li span.info, div.main_banner .slider_container #slider3 li > a span.Decima, div.main_banner .slider_container #slider3 li > a span.btn, div.main_banner .slider_container #slider3 li > a section.lightbox .content span.info, section.lightbox .content div.main_banner .slider_container #slider3 li > a span.info {
       margin-top: 1.5em;
       display: block; }
-    div.main_banner .slider_container #slider1 li .gray, div.main_banner .slider_container #slider3 li > a .gray {
+    div.main_banner .slider_container li .gray, div.main_banner .slider_container #slider3 li > a .gray {
       color: #cbcbcb; }
-    div.main_banner .slider_container #slider1 li .gray:before, div.main_banner .slider_container #slider3 li > a .gray:before {
+    div.main_banner .slider_container li .gray:before, div.main_banner .slider_container #slider3 li > a .gray:before {
       content: "← ";
       color: #434343; }
 div.main_banner ul.tabs-pager {
@@ -1371,7 +1374,8 @@ div.main_banner ul.tabs-bullets {
   top: 3em; }
   div.main_banner ul.tabs-bullets li {
     display: inline-block;
-    padding-bottom: 0.5em; }
+    padding-bottom: 0.5em;
+    height: 25px; }
   div.main_banner ul.tabs-bullets a {
     -moz-border-radius: 1em;
     -webkit-border-radius: 1em;
@@ -1406,14 +1410,14 @@ div.main_banner .arrow_navigation {
 @media (max-width: 620px) {
   div.main_banner .slider_container {
     height: auto; }
-    div.main_banner .slider_container li {
+    div.main_banner .slider_container li, div.main_banner .slider_container #slider3 li > a {
       height: auto; }
-      div.main_banner .slider_container li > div {
+      div.main_banner .slider_container li > div, div.main_banner .slider_container #slider3 li > a > div {
         display: block;
         width: 100%; }
-      div.main_banner .slider_container li .image {
+      div.main_banner .slider_container li .image, div.main_banner .slider_container #slider3 li > a .image {
         height: 20em; }
-      div.main_banner .slider_container li .txt {
+      div.main_banner .slider_container li .txt, div.main_banner .slider_container #slider3 li > a .txt {
         padding: 2em 2em 6em 2em;
         height: auto; } }
 
@@ -1716,3 +1720,5 @@ section.lightbox {
       margin: 2%; }
     section.lightbox .content .tags {
       margin-top: 2em; } }
+.feat_project_home {
+  opacity: 0; }
