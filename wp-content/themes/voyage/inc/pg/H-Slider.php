@@ -24,7 +24,7 @@
 					foreach( $post_objects as $post):
 						setup_postdata($post); ?>
 
-						<li id="rslides1_s0" class="" style="display: table; float: none; position: absolute; opacity: 0; z-index: 1; transition: opacity 500ms ease-in-out;"><?php
+						<li id="rslides1_s0" class="" style="display: table; float: none; position: absolute; opacity: 0; z-index: 1; transition: opacity 500ms ease-in-out; width: 100%;"><?php
 
 							$image = get_field('hzn_image');
 							$img = $image['ID'];

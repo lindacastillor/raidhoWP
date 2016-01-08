@@ -1117,19 +1117,21 @@ footer ul {
   transition: none !important;
   -webkit-transition: none !important; }
 
-.bl-party-three-one-caption div:nth-child(1) {
-  width: 50%;
-  float: left; }
-.bl-party-three-one-caption div:nth-child(2) {
-  width: 50%;
-  float: right; }
-.bl-party-three-one-caption div:nth-child(3) {
-  width: 50%;
-  float: right;
-  overflow: hidden;
-  *zoom: 1; }
-.bl-party-three-one-caption div img {
-  width: 100%; }
+.bl-party-three-one-caption {
+  overflow: hidden; }
+  .bl-party-three-one-caption div:nth-child(1) {
+    width: 50%;
+    float: left; }
+  .bl-party-three-one-caption div:nth-child(2) {
+    width: 50%;
+    float: right; }
+  .bl-party-three-one-caption div:nth-child(3) {
+    width: 50%;
+    float: right;
+    overflow: hidden;
+    *zoom: 1; }
+  .bl-party-three-one-caption div img {
+    width: 100%; }
 
 .bl-party-four-w-captions ul,
 .bl-party-three-w-captions ul,
