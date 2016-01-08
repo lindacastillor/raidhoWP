@@ -31,6 +31,7 @@
 								$img_larger = wp_get_attachment_image_src($img, 'larger');
 								$img_largest = wp_get_attachment_image_src($img, 'largest');
 
+								echo '<a href="'.the_permalink().'">';
 								echo '<div class="image" id="slbg-'.$titBgID.'">';
 								echo '<style> #slbg-'.$titBgID.' {background-image: url(' . $img_large[0] . ');}';
 								if($img_large) { echo ' @media (min-width: 1024px) { #slbg-'.$titBgID.' {background-image: url(' . $img_larger[0] . ');} }'; }
@@ -41,9 +42,10 @@
 								<div>
 									<h2><span class="red">Recent:</span> <?php the_field('subtitle'); ?></h2>
 									<p class="Decima phone_hide"><?php the_field('excerpt'); ?></p>
-									<a href="<?php the_permalink(); ?>"><p class="Decima red phone_hide">Read the full story →</p></a>
+									<span class="Decima red phone_hide">Read the full story →</span>
 								</div>
 							</div>
+							</a>
 						</li><?php
 
 					endforeach; ?>
