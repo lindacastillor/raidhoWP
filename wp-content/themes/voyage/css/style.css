@@ -1026,6 +1026,9 @@ footer ul {
     margin-right: 1em; }
     .log_filter li a:hover {
       color: #dd1919; }
+  @media (max-width: 400px) {
+    .log_filter {
+      display: none; } }
 
 .log_single_wrap {
   position: relative;
