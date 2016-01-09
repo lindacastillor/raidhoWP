@@ -777,9 +777,9 @@ h1.full_width_message {
     background-repeat: no-repeat;
     background-size: 16px;
     background-position: 0% 10%;
-    padding-left: 1.5em; }
+    padding-left: 25px; }
   .log > li p.small_title, .log > li section.lightbox .content p.tags, section.lightbox .content .log > li p.tags {
-    padding-left: 1em; }
+    padding-left: 25px; }
   .log > li blockquote {
     margin-bottom: 1.5em; }
 
