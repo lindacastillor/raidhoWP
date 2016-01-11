@@ -15,11 +15,6 @@ Neue Raidho Website
 
 	<title><?php wp_title(); ?></title>
 
-	<link rel="stylesheet" type="text/css" href="css/style.css">
-	<link rel="stylesheet" type="text/css" href="css/responsivemenu.css">
-	<link rel="stylesheet" type="text/css" href="fonts/leitura/MyFontsWebfontsKit.css">
-	<link rel="stylesheet" type="text/css" href="fonts/decima/MyFontsWebfontsKit.css">
-
 	<link rel="stylesheet" href="<?php bloginfo('stylesheet_url');?>">
 	<link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/css/shame.css">
 	<link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/fonts/leitura/MyFontsWebfontsKit.css">
