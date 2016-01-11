@@ -35,6 +35,9 @@
 		}
 		wp_reset_postdata(); ?>
 	</ul>
+	<div class="posts_pager">
+		<?php echo paginate_links(); ?>
+	</div>
 </section><?php
 
 	$archQ = new WP_Query( 'post_type=page&pagename=recent' );
