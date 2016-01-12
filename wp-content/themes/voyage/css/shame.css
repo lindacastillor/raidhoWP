@@ -29,3 +29,21 @@ hr {
 	border: none;
 	border-top: 1px solid #cacaca;
 }
+
+/* Temporary Pager for Recent Archive */
+
+.posts_pager {
+	text-align: center;
+	margin: 3em 0;
+}
+.posts_pager span, .posts_pager a.page-numbers {
+	background-color: red;
+	padding: 1em;
+	color: white;
+}
+span.page-numbers.current {
+	background-color: #CA1B1B;
+}
+.posts_pager a.page-numbers:hover {
+	background-color: #CA1B1B;
+}
