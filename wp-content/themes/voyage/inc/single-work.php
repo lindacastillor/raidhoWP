@@ -68,6 +68,9 @@ Missing:
 		elseif( get_row_layout() == 'titling' ) :
 			get_template_part('inc/pg/B', 'Titling');
 
+		elseif( get_row_layout() == 'video_imagen' ) :
+			get_template_part('inc/sn/B', 'video_imagen');
+
 		endif;
 	endwhile; ?>
 
