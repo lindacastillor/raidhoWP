@@ -47,3 +47,101 @@ span.page-numbers.current {
 .posts_pager a.page-numbers:hover {
 	background-color: #CA1B1B;
 }
+
+/* Slider Arrows/Bullets */
+
+a.centered-btns_nav.prev,
+a.centered-btns_nav.next{
+    position: absolute;
+    z-index:10;color:rgba(0,0,0,0);
+    -webkit-transition: all 0.1s ease-in-out;
+    -moz-transition: all 0.1s ease-in-out;
+    -ms-transition: all 0.1s ease-in-out;
+    -o-transition: all 0.1s ease-in-out;
+    transition: all 0.1s ease-in-out;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image: url("../img/left.svg");
+    background-color: none;
+    border: none; font-size: 16px;
+    padding: 0;
+    width: 5em;
+    height: 5em;
+    bottom: 0px;}
+
+a.centered-btns_nav.next{
+    -moz-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    -webkit-transform: rotate(180deg);
+    transform: rotate(180deg);
+    right: 0;}
+
+a.centered-btns_nav.next:hover,
+a.centered-btns_nav.prev:hover{
+	-webkit-transition: all 0.1s ease-in-out;
+    -moz-transition: all 0.1s ease-in-out;
+    -ms-transition: all 0.1s ease-in-out;
+    -o-transition: all 0.1s ease-in-out;
+    transition: all 0.1s ease-in-out;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: #00aacd;
+    padding: 0;
+    background-image: url("../img/right.svg");
+    border: none;}
+
+ul.rslides.centered-btns{
+	position: relative;overflow: hidden;}
+
+ul.centered-btns_tabs{
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    margin: 1em auto;
+    width: 80%;
+    position: absolute;
+    z-index: 4;
+    left: 0;
+    right: 0;
+    bottom: 0;}
+
+ul.centered-btns_tabs li{
+	width: auto;
+    display: inline-block;
+    height: 100%;
+    position: relative;}
+
+ul.centered-btns_tabs li a{
+	color: rgba(0,0,0,0);
+    -moz-border-radius: 1em;
+    -webkit-border-radius: 1em;
+    border-radius: 1em;
+    height: 16px;
+    width: 16px;
+    margin: 0 0.3em;
+    border: 4px solid #00aacd;
+    isplay: inline;
+    float: left;
+    display: inline-block;}
+
+ul.centered-btns_tabs li a:hover,
+ul.centered-btns_tabs li.centered-btns_here a{
+	background-color: #ffffff;
+    border: 4px solid #ffffff;}
+
+.bl-party-img-slider {
+	overflow: hidden;
+	display: table; }
+
+.bl-party-img-slider > div img{
+	width: 100%;
+	margin-bottom: -1px;}
+
+.bl-party-img-slider > div {
+	width: 50%;
+	display: table-cell;}
+
+.bl-party-img-slider .wide_slider{
+	width: 100%;
+	display: inline-block;
+	height: 100%;}
