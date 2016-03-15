@@ -71,6 +71,9 @@ Missing:
 		elseif( get_row_layout() == 'video_imagen' ) :
 			get_template_part('inc/sn/B', 'video_imagen');
 
+		elseif( get_row_layout() == 'img_slider' ) :
+			get_template_part('inc/sn/C', 'slider_img');
+
 		endif;
 	endwhile; ?>
 

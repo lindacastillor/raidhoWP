@@ -109,8 +109,7 @@ elseif (get_sub_field('choose') == 'thirds-cap') :
 
 elseif (get_sub_field('choose') == 'slider') :
 	echo 'slider: images<br> @Linda, onstáh esto?';
-
-
+	
 elseif (get_sub_field('choose') == 'mayhem') :
 	$images = get_sub_field('gallery');
 	if($images) : ?>
