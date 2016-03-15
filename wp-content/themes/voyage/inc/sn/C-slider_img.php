@@ -21,7 +21,7 @@ if (get_sub_field('choose') == 'slider-right') : ?>
 								<div class="image" style="background-image: url(<?php echo $image['sizes']['larger']; ?>);"></div>
 							</li><?php
 						endforeach;	?>
-					<ul>
+					</ul>
 				</div><?php
 			endif; ?>
 		</div>
@@ -41,7 +41,7 @@ elseif (get_sub_field('choose') == 'slider-left') : ?>
 								<div class="image" style="background-image: url(<?php echo $image['sizes']['larger']; ?>);"></div>
 							</li><?php
 						endforeach;	?>
-					<ul>
+					</ul>
 				</div><?php
 			endif; ?>
 		</div>
