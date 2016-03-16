@@ -108,7 +108,14 @@ elseif (get_sub_field('choose') == 'thirds-cap') :
 	endif;
 
 elseif (get_sub_field('choose') == 'slider') : ?>
-	<div>
+	<div id="big_slide">
+		<style>
+			#big_slide ul.centered-btns_tabs li a{
+				border: 4px solid <?php the_sub_field('bg-color'); ?>;}
+			#big_slide a.centered-btns_nav.next:hover,
+			#big_slide a.centered-btns_nav.prev:hover{
+				background-color: <?php the_sub_field('bg-color'); ?>;}
+		</style>
 		<?php
 		$images = get_sub_field('gallery');
 		if($images) : ?>
@@ -123,7 +130,7 @@ elseif (get_sub_field('choose') == 'slider') : ?>
 			</div><?php
 		endif; ?>
 	</div>
-	
+
 <?php
 elseif (get_sub_field('choose') == 'mayhem') :
 	$images = get_sub_field('gallery');

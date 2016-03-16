@@ -11,6 +11,13 @@ if (get_sub_field('choose') == 'slider-right') : ?>
 			</picture>
 		</div>
 		<div>
+			<style>
+				.bl-party-img-slider ul.centered-btns_tabs li a{
+					border: 4px solid <?php the_sub_field('bg-color'); ?>;}
+				.bl-party-img-slider a.centered-btns_nav.next:hover,
+				.bl-party-img-slider a.centered-btns_nav.prev:hover{
+					background-color: <?php the_sub_field('bg-color'); ?>;}
+			</style>
 			<?php
 			$images = get_sub_field('gallery');
 			if($images) : ?>
@@ -31,6 +38,13 @@ if (get_sub_field('choose') == 'slider-right') : ?>
 elseif (get_sub_field('choose') == 'slider-left') : ?>
 	<div class="bl-party-img-slider">
 		<div>
+			<style>
+				.bl-party-img-slider ul.centered-btns_tabs li a{
+					border: 4px solid <?php the_sub_field('bg-color'); ?>;}
+				.bl-party-img-slider a.centered-btns_nav.next:hover,
+				.bl-party-img-slider a.centered-btns_nav.prev:hover{
+					background-color: <?php the_sub_field('bg-color'); ?>;}
+			</style>
 			<?php
 			$images = get_sub_field('gallery');
 			if($images) : ?>
