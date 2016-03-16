@@ -132,7 +132,7 @@ ul.centered-btns_tabs li a{
 ul.centered-btns_tabs li a:hover,
 ul.centered-btns_tabs li.centered-btns_here a{
 	background-color: #ffffff;
-	border: 4px solid #ffffff;}
+	border: 4px solid #ffffff!important;}
 
 .bl-party-img-slider {
 	overflow: hidden;
