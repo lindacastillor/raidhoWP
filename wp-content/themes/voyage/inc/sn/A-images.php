@@ -108,14 +108,18 @@ elseif (get_sub_field('choose') == 'thirds-cap') :
 	endif;
 
 elseif (get_sub_field('choose') == 'thirds-slider-left') : ?>
-		<div class="bl-party-img-slider-third">
+		<div class="bl-party-img-slider-third sldr-left">
 			<div class="slider">
 				<style>
-					.bl-party-img-slider-third .slider ul.centered-btns_tabs li a{
+					.bl-party-img-slider-third.sldr-left .slider ul.centered-btns_tabs li a{
 						border: 4px solid <?php the_sub_field('bg-color'); ?>;}
-					.bl-party-img-slider-third .slider a.centered-btns_nav.next:hover,
+					.bl-party-img-slider-third.sldr-left .slider a.centered-btns_nav.next:hover,
 					.bl-party-img-slider-third .slider a.centered-btns_nav.prev:hover{
 						background-color: <?php the_sub_field('bg-color'); ?>;}
+					.bl-party-img-slider-third.sldr-left .slider ul.centered-btns_tabs li a:hover,
+					.bl-party-img-slider-third.sldr-left .slider ul.centered-btns_tabs li.centered-btns_here a{
+						background-color: <?php the_sub_field('bg-color'); ?>;
+						border: 4px solid <?php the_sub_field('bg-color'); ?>;}
 				</style>
 				<?php
 				$images = get_sub_field('gallery');
@@ -124,7 +128,7 @@ elseif (get_sub_field('choose') == 'thirds-slider-left') : ?>
 						<ul class="rslides slider2"><?php
 							foreach( $images as $image ): ?>
 								<li>
-									<div class="image" style="background-image: url(<?php echo $image['sizes']['larger']; ?>);"></div>
+									<img src="<?php echo $image['sizes']['larger']; ?>" alt="<?php echo $image['alt']; ?>" />
 								</li><?php
 							endforeach;	?>
 						</ul>
@@ -154,7 +158,7 @@ elseif (get_sub_field('choose') == 'thirds-slider-left') : ?>
 		</div><?php
 
 elseif (get_sub_field('choose') == 'thirds-slider-right') : ?>
-		<div class="bl-party-img-slider-third">
+		<div class="bl-party-img-slider-third sldr-right">
 			<?php
 			$images = get_sub_field('img');
 			if($images) : ?>
@@ -177,11 +181,15 @@ elseif (get_sub_field('choose') == 'thirds-slider-right') : ?>
 			endif; ?>
 			<div class="slider">
 				<style>
-					.bl-party-img-slider-third .slider ul.centered-btns_tabs li a{
+					.bl-party-img-slider-third.sldr-right .slider ul.centered-btns_tabs li a{
 						border: 4px solid <?php the_sub_field('bg-color'); ?>;}
-					.bl-party-img-slider-third .slider a.centered-btns_nav.next:hover,
-					.bl-party-img-slider-third .slider a.centered-btns_nav.prev:hover{
+					.bl-party-img-slider-third.sldr-right .slider a.centered-btns_nav.next:hover,
+					.bl-party-img-slider-third.sldr-right .slider a.centered-btns_nav.prev:hover{
 						background-color: <?php the_sub_field('bg-color'); ?>;}
+					.bl-party-img-slider-third.sldr-right .slider .wide_slider ul.centered-btns_tabs li a:hover,
+					.bl-party-img-slider-third.sldr-right .slider .wide_slider ul.centered-btns_tabs li.centered-btns_here a{
+						background-color: <?php the_sub_field('bg-color'); ?>;
+						border: 4px solid <?php the_sub_field('bg-color'); ?>;}
 				</style>
 				<?php
 				$images = get_sub_field('gallery');
@@ -190,7 +198,7 @@ elseif (get_sub_field('choose') == 'thirds-slider-right') : ?>
 						<ul class="rslides slider2"><?php
 							foreach( $images as $image ): ?>
 								<li>
-									<div class="image" style="background-image: url(<?php echo $image['sizes']['larger']; ?>);"></div>
+									<img src="<?php echo $image['sizes']['larger']; ?>" alt="<?php echo $image['alt']; ?>" />
 								</li><?php
 							endforeach;	?>
 						</ul>
@@ -207,6 +215,10 @@ elseif (get_sub_field('choose') == 'slider') : ?>
 			#big_slide a.centered-btns_nav.next:hover,
 			#big_slide a.centered-btns_nav.prev:hover{
 				background-color: <?php the_sub_field('bg-color'); ?>;}
+			#big_slide  ul.centered-btns_tabs li a:hover,
+			#big_slide  ul.centered-btns_tabs li.centered-btns_here a{
+				background-color: <?php the_sub_field('bg-color'); ?>;
+				border: 4px solid <?php the_sub_field('bg-color'); ?>;}
 		</style>
 		<?php
 		$images = get_sub_field('gallery');

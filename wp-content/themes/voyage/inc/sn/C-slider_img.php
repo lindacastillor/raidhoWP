@@ -1,7 +1,6 @@
 <?php
-$v_one = 1;
 if (get_sub_field('choose') == 'slider-right') : ?>
-	<div class="bl-party-img-slider" id="img-slider-one<?php echo $v_one++?>">
+	<div class="bl-party-img-slider" id="img-slider-one<?php echo $count; ?>">
 		<div>
 			<picture>
 				<?php
@@ -18,6 +17,10 @@ if (get_sub_field('choose') == 'slider-right') : ?>
 				.bl-party-img-slider a.centered-btns_nav.next:hover,
 				.bl-party-img-slider a.centered-btns_nav.prev:hover{
 					background-color: <?php the_sub_field('bg-color'); ?>;}
+				.bl-party-img-slider ul.centered-btns_tabs li a:hover,
+				.bl-party-img-slider ul.centered-btns_tabs li.centered-btns_here a{
+					background-color: <?php the_sub_field('bg-color'); ?>;
+					border: 4px solid <?php the_sub_field('bg-color'); ?>;}
 			</style>
 			<?php
 			$images = get_sub_field('gallery');
@@ -26,7 +29,7 @@ if (get_sub_field('choose') == 'slider-right') : ?>
 					<ul class="rslides slider2"><?php
 						foreach( $images as $image ): ?>
 							<li>
-								<div class="image" style="background-image: url(<?php echo $image['sizes']['larger']; ?>);"></div>
+								<img src="<?php echo $image['sizes']['larger']; ?>" alt="<?php echo $image['alt']; ?>" />
 							</li><?php
 						endforeach;	?>
 					</ul>
@@ -35,10 +38,10 @@ if (get_sub_field('choose') == 'slider-right') : ?>
 		</div>
 	</div>
 
+
 <?php
-$v_two = 1;
 elseif (get_sub_field('choose') == 'slider-left') : ?>
-	<div class="bl-party-img-slider" id="img-slider-two<?php echo $v_two++?>">
+	<div class="bl-party-img-slider" id="img-slider-two<?php// echo $v_two++?>">
 		<div>
 			<style>
 				.bl-party-img-slider ul.centered-btns_tabs li a{
@@ -46,6 +49,10 @@ elseif (get_sub_field('choose') == 'slider-left') : ?>
 				.bl-party-img-slider a.centered-btns_nav.next:hover,
 				.bl-party-img-slider a.centered-btns_nav.prev:hover{
 					background-color: <?php the_sub_field('bg-color'); ?>;}
+				.bl-party-img-slider ul.centered-btns_tabs li a:hover,
+				.bl-party-img-slider ul.centered-btns_tabs li.centered-btns_here a{
+					background-color: <?php the_sub_field('bg-color'); ?>;
+					border: 4px solid <?php the_sub_field('bg-color'); ?>;}
 			</style>
 			<?php
 			$images = get_sub_field('gallery');
@@ -54,7 +61,7 @@ elseif (get_sub_field('choose') == 'slider-left') : ?>
 					<ul class="rslides slider2"><?php
 						foreach( $images as $image ): ?>
 							<li>
-								<div class="image" style="background-image: url(<?php echo $image['sizes']['larger']; ?>);"></div>
+								<img src="<?php echo $image['sizes']['larger']; ?>" alt="<?php echo $image['alt']; ?>" />
 							</li><?php
 						endforeach;	?>
 					</ul>
