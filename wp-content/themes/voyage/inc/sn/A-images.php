@@ -107,6 +107,98 @@ elseif (get_sub_field('choose') == 'thirds-cap') :
 		</div><?php
 	endif;
 
+elseif (get_sub_field('choose') == 'thirds-slider-left') : ?>
+		<div class="bl-party-img-slider-third">
+			<div class="slider">
+				<style>
+					.bl-party-img-slider ul.centered-btns_tabs li a{
+						border: 4px solid <?php the_sub_field('bg-color'); ?>;}
+					.bl-party-img-slider a.centered-btns_nav.next:hover,
+					.bl-party-img-slider a.centered-btns_nav.prev:hover{
+						background-color: <?php the_sub_field('bg-color'); ?>;}
+				</style>
+				<?php
+				$images = get_sub_field('gallery');
+				if($images) : ?>
+					<div class="wide_slider">
+						<ul class="rslides slider2"><?php
+							foreach( $images as $image ): ?>
+								<li>
+									<div class="image" style="background-image: url(<?php echo $image['sizes']['larger']; ?>);"></div>
+								</li><?php
+							endforeach;	?>
+						</ul>
+					</div><?php
+				endif; ?>
+			</div>
+			<?php
+			$images = get_sub_field('img');
+			if($images) : ?>
+			<div class="images">
+				<ul><?php
+					foreach( $images as $image ): ?>
+						<li>
+							<picture>
+								<img src="<?php echo $image['sizes']['larger']; ?>"
+									 <?php echo tevkori_get_srcset_string( $image['ID'], 'largest' ); ?>
+									 alt="<?php echo $image['alt']; ?>" />
+							</picture><?php
+							if($image['caption']){
+								echo '<p class="small_paragraph Decima">'. $image['caption'] .'</p>';
+							} ?>
+						</li><?php
+					endforeach;	?>
+				</ul>
+			</div><?php
+			endif; ?>
+		</div><?php
+
+elseif (get_sub_field('choose') == 'thirds-slider-right') : ?>
+		<div class="bl-party-img-slider-third">
+			<?php
+			$images = get_sub_field('img');
+			if($images) : ?>
+			<div class="images">
+				<ul><?php
+					foreach( $images as $image ): ?>
+						<li>
+							<picture>
+								<img src="<?php echo $image['sizes']['larger']; ?>"
+									 <?php echo tevkori_get_srcset_string( $image['ID'], 'largest' ); ?>
+									 alt="<?php echo $image['alt']; ?>" />
+							</picture><?php
+							if($image['caption']){
+								echo '<p class="small_paragraph Decima">'. $image['caption'] .'</p>';
+							} ?>
+						</li><?php
+					endforeach;	?>
+				</ul>
+			</div><?php
+			endif; ?>
+			<div class="slider">
+				<style>
+					.bl-party-img-slider ul.centered-btns_tabs li a{
+						border: 4px solid <?php the_sub_field('bg-color'); ?>;}
+					.bl-party-img-slider a.centered-btns_nav.next:hover,
+					.bl-party-img-slider a.centered-btns_nav.prev:hover{
+						background-color: <?php the_sub_field('bg-color'); ?>;}
+				</style>
+				<?php
+				$images = get_sub_field('gallery');
+				if($images) : ?>
+					<div class="wide_slider">
+						<ul class="rslides slider2"><?php
+							foreach( $images as $image ): ?>
+								<li>
+									<div class="image" style="background-image: url(<?php echo $image['sizes']['larger']; ?>);"></div>
+								</li><?php
+							endforeach;	?>
+						</ul>
+					</div><?php
+				endif; ?>
+			</div>
+		</div><?php
+
 elseif (get_sub_field('choose') == 'slider') : ?>
 	<div id="big_slide">
 		<style>
