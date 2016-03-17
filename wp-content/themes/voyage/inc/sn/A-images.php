@@ -111,10 +111,10 @@ elseif (get_sub_field('choose') == 'thirds-slider-left') : ?>
 		<div class="bl-party-img-slider-third">
 			<div class="slider">
 				<style>
-					.bl-party-img-slider ul.centered-btns_tabs li a{
+					.bl-party-img-slider-third .slider ul.centered-btns_tabs li a{
 						border: 4px solid <?php the_sub_field('bg-color'); ?>;}
-					.bl-party-img-slider a.centered-btns_nav.next:hover,
-					.bl-party-img-slider a.centered-btns_nav.prev:hover{
+					.bl-party-img-slider-third .slider a.centered-btns_nav.next:hover,
+					.bl-party-img-slider-third .slider a.centered-btns_nav.prev:hover{
 						background-color: <?php the_sub_field('bg-color'); ?>;}
 				</style>
 				<?php
@@ -177,10 +177,10 @@ elseif (get_sub_field('choose') == 'thirds-slider-right') : ?>
 			endif; ?>
 			<div class="slider">
 				<style>
-					.bl-party-img-slider ul.centered-btns_tabs li a{
+					.bl-party-img-slider-third .slider ul.centered-btns_tabs li a{
 						border: 4px solid <?php the_sub_field('bg-color'); ?>;}
-					.bl-party-img-slider a.centered-btns_nav.next:hover,
-					.bl-party-img-slider a.centered-btns_nav.prev:hover{
+					.bl-party-img-slider-third .slider a.centered-btns_nav.next:hover,
+					.bl-party-img-slider-third .slider a.centered-btns_nav.prev:hover{
 						background-color: <?php the_sub_field('bg-color'); ?>;}
 				</style>
 				<?php

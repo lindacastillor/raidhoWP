@@ -150,3 +150,31 @@ ul.centered-btns_tabs li.centered-btns_here a{
 	width: 100%;
 	display: inline-block;
 	height: 100%;}
+
+/* Third slider/ images */
+
+.bl-party-img-slider-third {
+    overflow: hidden;
+    display: table; }
+
+.bl-party-img-slider-third > .slider {
+    width: 33.33%;
+    display: table-cell;}
+
+.bl-party-img-slider-third > .slider .wide_slider {
+    height: 100%;
+    display: inline-block;
+    width: 100%;}
+
+.bl-party-img-slider-third > .images {
+    width: 66.66%;
+    display: table-cell;
+    font-size: 0; }
+
+.bl-party-img-slider-third > .images li {
+    width: 50%;
+    display: inline-block;
+    vertical-align: top;}
+
+.bl-party-img-slider-third > .images li img {
+    width: 100%; }
