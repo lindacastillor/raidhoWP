@@ -125,14 +125,9 @@ ul.centered-btns_tabs li a{
 	height: 16px;
 	width: 16px;
 	margin: 0 0.3em;
-	isplay: inline;
+	display: inline;
 	float: left;
 	display: inline-block;}
-
-ul.centered-btns_tabs li a:hover,
-ul.centered-btns_tabs li.centered-btns_here a{
-	background-color: #ffffff;
-	border: 4px solid #ffffff!important;}
 
 /* Halfs slider/ images */
 
@@ -152,6 +147,7 @@ ul.centered-btns_tabs li.centered-btns_here a{
 	width: 100%;
 	display: inline-block;
 	height: 100%;}
+
 
 /* Third slider/ images */
 
@@ -185,10 +181,8 @@ ul.centered-btns_tabs li.centered-btns_here a{
 
 #big_slide .wide_slider {
 	height: auto!important;}
-
 #big_slide .wide_slider ul.rslides li {
 	height: auto;}
-
-#big_slide .wide_slider ul.rslides li img {
+.wide_slider li img {
 	width: 100%;
 	height: auto;}
