@@ -215,7 +215,8 @@ elseif (get_sub_field('choose') == 'slider') : ?>
 				<ul class="rslides slider2"><?php
 					foreach( $images as $image ): ?>
 						<li>
-							<div class="image" style="background-image: url(<?php echo $image['sizes']['larger']; ?>);"></div>
+							<img src="<?php echo $image['sizes']['huge']; ?>">
+							<!-- <div class="image" style="background-image: url(<?php// echo $image['sizes']['larger']; ?>);"></div> -->
 						</li><?php
 					endforeach;	?>
 				</ul>

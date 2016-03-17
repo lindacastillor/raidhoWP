@@ -1,6 +1,7 @@
 <?php
+$v_one = 1;
 if (get_sub_field('choose') == 'slider-right') : ?>
-	<div class="bl-party-img-slider">
+	<div class="bl-party-img-slider" id="img-slider-one<?php echo $v_one++?>">
 		<div>
 			<picture>
 				<?php
@@ -35,8 +36,9 @@ if (get_sub_field('choose') == 'slider-right') : ?>
 	</div>
 
 <?php
+$v_two = 1;
 elseif (get_sub_field('choose') == 'slider-left') : ?>
-	<div class="bl-party-img-slider">
+	<div class="bl-party-img-slider" id="img-slider-two<?php echo $v_two++?>">
 		<div>
 			<style>
 				.bl-party-img-slider ul.centered-btns_tabs li a{
