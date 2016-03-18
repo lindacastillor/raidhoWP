@@ -16,7 +16,7 @@ if (get_sub_field('choose') == 'one') :
 				</div><?php
 			endforeach;
 			if(get_sub_field('caption')){ ?>
-				<div class="caption decima"><?php the_sub_field('caption') ?></div><?php
+				<div class="wrap caption decima"><?php the_sub_field('caption') ?></div><?php
 			} ?>
 		</div><?php
 	endif;
@@ -37,7 +37,7 @@ elseif (get_sub_field('choose') == 'two') :
 				</div><?php
 			endforeach;
 			if(get_sub_field('caption')){ ?>
-				<div class="caption decima"><?php the_sub_field('caption') ?></div><?php
+				<div class="wrap caption decima"><?php the_sub_field('caption') ?></div><?php
 			} ?>
 		</div><?php
 	endif;
@@ -58,7 +58,7 @@ elseif (get_sub_field('choose') == 'one-half') :
 				</div><?php
 			endforeach;
 			if(get_sub_field('caption')){ ?>
-				<div class="caption decima"><?php the_sub_field('caption') ?></div><?php
+				<div class="wrap caption decima"><?php the_sub_field('caption') ?></div><?php
 			} ?>
 		</div><?php
 	endif;
