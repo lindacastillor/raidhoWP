@@ -193,7 +193,8 @@ ul.centered-btns_tabs li a{
 	display: inline-block;
 	vertical-align: top;}
 
-.bl-party-img-slider-third > .images li img {
+.bl-party-img-slider-third > .images li img,
+.bl-party-img-slider-third.sldr-middle img {
 	width: 100%; }
 
 /* Big slider */
@@ -233,4 +234,5 @@ ul.centered-btns_tabs li a{
 	.bl-party-img-slider-third > .images,
 	.bl-party-img-slider-third > .images li,
 	.bl-party-img-slider-third > .slider {
-		width: 100%}}
+		width: 100%;
+		display: inline-block;}}
