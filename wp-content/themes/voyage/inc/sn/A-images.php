@@ -162,9 +162,9 @@ elseif (get_sub_field('choose') == 'thirds-slider-middle') : ?>
 			<div class="slider">
 				<div>
 					<picture>
-						<img src="<?php echo $image['sizes']['larger']; ?>"
-							 <?php echo tevkori_get_srcset_string( $image['ID'], 'largest' ); ?>
-							 alt="<?php echo $image['alt']; ?>" />
+						<?php if( get_sub_field('img_izq') ): ?>
+							<img src="<?php the_sub_field('img_izq'); ?>" />
+						<?php endif; ?>
 					</picture>
 				</div>
 			</div>
@@ -197,9 +197,9 @@ elseif (get_sub_field('choose') == 'thirds-slider-middle') : ?>
 			<div class="slider">
 				<div>
 					<picture>
-						<img src="<?php echo $image['sizes']['larger']; ?>"
-							 <?php echo tevkori_get_srcset_string( $image['ID'], 'largest' ); ?>
-							 alt="<?php echo $image['alt']; ?>" />
+						<?php if( get_sub_field('img_rt') ): ?>
+							<img src="<?php the_sub_field('img_rt'); ?>" />
+						<?php endif; ?>
 					</picture>
 				</div>
 			</div>
