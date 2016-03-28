@@ -81,8 +81,7 @@ a.centered-btns_nav.next:before {
 	position: absolute;
 	background-repeat: no-repeat;
 	background-position: center;
-	opacity: 0;
-	transition: .4s ease;}
+	opacity: 0;}
 
 a.centered-btns_nav.prev:before {
 	background-image: url("../img/right.svg"); }
