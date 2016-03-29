@@ -50,8 +50,7 @@ span.page-numbers.current {
 
 /* Slider Arrows/Bullets */
 
-a.centered-btns_nav.prev,
-a.centered-btns_nav.next {
+a.centered-btns_nav{
 	color: rgba(0,0,0,0);
 	width: 5em;
 	height: 5em;
@@ -62,10 +61,11 @@ a.centered-btns_nav.next {
 	background-position: center;
 	overflow:hidden;}
 
-a.centered-btns_nav.prev {
+a.centered-btns_nav:nth-child(3) {
+	left: 0;
 	background-image: url("../img/left.svg");}
 
-a.centered-btns_nav.next {
+a.centered-btns_nav:nth-child(2) {
 	-moz-transform: rotate(180deg);
 	-ms-transform: rotate(180deg);
 	-webkit-transform: rotate(180deg);
@@ -93,6 +93,9 @@ a.centered-btns_nav.next:before {
 	transform: rotate(0deg);
 	right: 0;}
 
+a.centered-btns_nav:hover:nth-child(3),
+a.centered-btns_nav:hover:nth-child(2) {
+	background-image: none;}
 
 a.centered-btns_nav.prev:hover:before,
 a.centered-btns_nav.next:hover:before {
