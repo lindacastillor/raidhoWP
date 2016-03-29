@@ -238,3 +238,7 @@ ul.centered-btns_tabs li a{
 	.bl-party-img-slider-third > .slider {
 		width: 100%;
 		display: inline-block;}}
+
+/* Logo vertical middle orientation */
+header #nav_logo {
+	padding: 0.65em 0;}
