@@ -27,6 +27,15 @@ Neue Raidho Website
 	<script src="<?php bloginfo('template_url'); ?>/js/scripts.js"></script>
 
 	<?php wp_head(); ?>
+
+	<?php if (is_front_page()) {?>
+		<script type="text/javascript">
+			url = "<?php echo esc_url(home_url()); ?>/work/"
+			if (screen.width <= 800) {
+				window.location = url;
+			}
+		</script>
+	<?php }?>
 </head>
 
 <body <?php body_class(); ?> >
