@@ -247,7 +247,20 @@ header #nav_logo {
 @media (max-width: 900px) {
 	#recent_post,
 	.feat_project.feat_project_home,
-	ul#nav li.hide_mobile {
+	ul#nav li.hide_mobile,
+	.wrap.bl-party-three-w-captions#explore-more span{
 		display: none;
+	}
+
+	.single h1 {
+		font-size: 1.96875em;
+	}
+	.single h2.leitura,
+	.single .leitura.medium_title {
+		font-size: 1em;
+	}
+
+	.full_width_message{
+		width: 100%!important;
 	}
 }

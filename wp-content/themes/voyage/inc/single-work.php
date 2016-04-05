@@ -90,7 +90,7 @@ Missing:
 
 
 	<section class="gray_light_bg">
-		<div class="wrap bl-party-three-w-captions">
+		<div class="wrap bl-party-three-w-captions" id="explore-more">
 			<h2 class="Decima">Explore More Projects</h2>
 			<ul><?php
 			$logQ = new WP_Query( array(
@@ -108,7 +108,7 @@ Missing:
 						if($thumb) {
 							echo '<img src="'. $thumb[0] .'" alt="">';
 						} ?>
-						<p><?php the_title(); ?><span class="Leitura"><?php the_field('subtitle'); ?></span></p>
+						<p><?php the_title(); ?><span class="Leitura"> <?php the_field('subtitle'); ?></span></p>
 					</a>
 				</li><?php
 			}
