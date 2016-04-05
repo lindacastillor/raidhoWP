@@ -242,3 +242,12 @@ ul.centered-btns_tabs li a{
 /* Logo vertical middle orientation */
 header #nav_logo {
 	padding: 0.65em 0;}
+
+/* Ajustes provisionales para dispositivos */
+@media (max-width: 900px) {
+	#recent_post,
+	.feat_project.feat_project_home,
+	ul#nav li.hide_mobile {
+		display: none;
+	}
+}

@@ -34,6 +34,8 @@ $("#recent_work > .project_wrapper .bl-party-four-w-captions ul > li").addClass(
 // Recent
 $("#loader ul.log > li:nth-child(-n+5)").removeClass("hidden_element");
 
+// Add class to hide menu element
+$('ul#nav li:contains("Recent")').addClass('hide_mobile');
 
 // Delay Home Container Elements
 //quickly setting up shortcuts, personal preference

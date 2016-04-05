@@ -4,7 +4,7 @@
 	$ftdImg = $img['sizes']['medium']; ?>
 
 
-<div class="wrap">
+<div class="wrap" id="recent_post">
 	<div class="e_nav1 gray_light_bg">
 		<a class="nav1_bttn" href="<?php the_sub_field('link'); ?>">
 			<div style="background-image: url('<?php echo $ftdImg; ?>')">
