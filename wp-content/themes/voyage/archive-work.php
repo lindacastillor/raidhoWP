@@ -25,9 +25,24 @@ get_header();
 				<li>
 					<a href="<?php the_permalink(); ?>"><?php
 
+						// cycled images
+						$images = get_field('cycle_gallery');
 						if (has_post_thumbnail( $post->ID ) ):
-						$image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'larger' ); ?>
+						$image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'larger' );
+
+							if($images) echo '<div class="cycled-featured main" id="main">'; ?>
 							<img src="<?php echo $image[0]; ?>" /><?php
+							if($images) echo '</div>';
+
+						endif;
+
+						if( $images ):
+							foreach( $images as $image ):
+							$imgUrl = wp_get_attachment_image_src($image, 'larger'); ?>
+								<div class="cheese" style="display:none;">
+									<img src="<?php echo $imgUrl[0]; ?>" />
+								</div>
+							<?php endforeach;
 						endif; ?>
 
 						<p><?php the_title(); ?> <span class="Leitura"><?php the_field('subtitle'); ?></span></p>
@@ -37,11 +52,9 @@ get_header();
 
 			endforeach;
 			wp_reset_postdata(); ?>
-			<ul>
+			</ul>
 		</div><?php
 		endif;
-
-
 
 
 		$three_obj = get_field('three_featured', 4196);
@@ -55,9 +68,26 @@ get_header();
 				<li>
 					<a href="<?php the_permalink(); ?>"><?php
 
+						// cycled images
+						$images = get_field('cycle_gallery');
+
 						if (has_post_thumbnail( $post->ID ) ):
-						$image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'med-sq' ); ?>
+						$image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'med-sq' );
+
+							if($images) echo '<div class="cycled-featured main" id="main">'; ?>
 							<img src="<?php echo $image[0]; ?>" /><?php
+							if($images) echo '</div>';
+
+						endif;
+
+
+						if( $images ):
+							foreach( $images as $image ):
+							$imgUrl = wp_get_attachment_image_src($image, 'larger'); ?>
+								<div class="cheese" style="display:none;">
+									<img src="<?php echo $imgUrl[0]; ?>" />
+								</div>
+							<?php endforeach;
 						endif; ?>
 
 						<p><?php the_title(); ?> <span class="Leitura"><?php the_field('subtitle'); ?></span></p>
@@ -67,7 +97,7 @@ get_header();
 
 			endforeach;
 			wp_reset_postdata(); ?>
-			<ul>
+			</ul>
 		</div><?php
 		endif;
 
@@ -84,9 +114,26 @@ get_header();
 					<li>
 						<a href="<?php the_permalink(); ?>"><?php
 
+							// cycled images
+							$images = get_field('cycle_gallery');
+
 							if (has_post_thumbnail( $post->ID ) ):
-							$image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'med-sq' ); ?>
-								<img src="<?php echo $image[0]; ?>" width="380" /><?php
+							$image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'med-sq' );
+
+								if($images) echo '<div class="cycled-featured main" id="main">'; ?>
+								<img src="<?php echo $image[0]; ?>" width="380"  /><?php
+								if($images) echo '</div>';
+
+							endif;
+
+
+							if( $images ):
+								foreach( $images as $image ):
+								$imgUrl = wp_get_attachment_image_src($image, 'larger'); ?>
+									<div class="cheese" style="display:none;">
+										<img src="<?php echo $imgUrl[0]; ?>" />
+									</div>
+								<?php endforeach;
 							endif; ?>
 
 							<p><?php the_title(); ?> <span class="Leitura"><?php the_field('subtitle'); ?></span></p>
@@ -94,7 +141,7 @@ get_header();
 					</li><?php
 
 				endwhile; ?>
-				<ul>
+				</ul>
 			</div><?php
 		endif; ?>
 

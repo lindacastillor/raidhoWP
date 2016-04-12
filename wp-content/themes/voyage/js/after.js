@@ -47,3 +47,78 @@ lA = $('.home_cover_info > h1');
 header.animate({opacity:1}, 600, function() {});
 project.animate({opacity:1}, 600, function() {});
 lA.delay(700).animate({opacity:1}, 400, function() {});
+
+
+// Cycle Images form Work Post
+// $(function () {
+//     //alert("Hello");
+//     var p = 0;
+
+//     var interval;
+
+//     var imgstack = [];
+
+//     // var imgs = $( ".cycled-featured img" );
+
+//     for (i = 0; i < $('.cycled-images').children().length; i++) {
+//         imgstack.push($('.cycled-images').find('img').eq(i).text());
+//     }
+
+//     //alert(imgstack);
+
+//     $('.cycled-featured').mouseover(function () {
+//         interval = setInterval(
+//             function changeImg() {
+//                 if (p < imgstack.length) {
+
+//                     var img = imgstack[p];
+//                     //$('.thumb').attr('src', img);
+//                     $('.cycled-featured').html(img);
+//                     p = p + 1;
+//                 }
+
+//                 else {
+//                     p = 0;
+//                 }
+//             }
+//         , 1000);
+//     });
+
+
+
+//     $('.cycled-featured').mouseout(function () {
+//         clearInterval(interval);
+//         p = 0;
+//         var img = imgstack[p];
+//         //$('.thumb').attr('src', 'Images/1.jpg');
+//         $('.cycled-featured').html(img);
+//     });
+// });
+
+
+
+
+$(document).ready(function(){
+    var allImg = document.querySelectorAll(".cheese img");
+    var images = [];
+    for (var i = 0; i < allImg.length; i++) {
+        images.push(allImg[i].src);
+    }
+    var Ding = '';
+    var firstImg = document.getElementById("main").src;
+    $('.main img').hover(function(){
+        var Counter = 0;
+        Ding = setInterval(function(){
+            if(Counter <=1){
+                Counter++;
+                $('.main img').attr('src',images[Counter]);
+            }
+            else{
+                Counter = 0;
+                $('.main img').attr('src',images[Counter]);
+            }
+        }, 500);
+    },function(){
+        clearInterval(Ding);
+    });
+});
