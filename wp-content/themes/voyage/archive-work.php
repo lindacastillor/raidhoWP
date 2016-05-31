@@ -6,7 +6,6 @@ Neue Raidho Website
 */
 
 get_header();
-
 ?>
 
 <section id="recent_work">
@@ -30,19 +29,19 @@ get_header();
 						if (has_post_thumbnail( $post->ID ) ):
 						$image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'larger' );
 
-							if($images) echo '<div class="cycled-featured main" id="main">'; ?>
+							if($images) echo '<div class="cycled-featured">'; ?>
 							<img src="<?php echo $image[0]; ?>" /><?php
 							if($images) echo '</div>';
 
 						endif;
 
 						if( $images ):
+							echo '<div class="main" style="display:none;">';
 							foreach( $images as $image ):
 							$imgUrl = wp_get_attachment_image_src($image, 'larger'); ?>
-								<div class="cheese" style="display:none;">
-									<img src="<?php echo $imgUrl[0]; ?>" />
-								</div>
+								<img src="<?php echo $image['sizes']['larger']; ?>" />
 							<?php endforeach;
+							echo '</div>';
 						endif; ?>
 
 						<p><?php the_title(); ?> <span class="Leitura"><?php the_field('subtitle'); ?></span></p>
@@ -52,9 +51,11 @@ get_header();
 
 			endforeach;
 			wp_reset_postdata(); ?>
-			</ul>
+			<ul>
 		</div><?php
 		endif;
+
+
 
 
 		$three_obj = get_field('three_featured', 4196);
@@ -74,30 +75,30 @@ get_header();
 						if (has_post_thumbnail( $post->ID ) ):
 						$image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'med-sq' );
 
-							if($images) echo '<div class="cycled-featured main" id="main">'; ?>
-							<img src="<?php echo $image[0]; ?>" /><?php
+							if($images) echo '<div class="cycled-featured">'; ?>
+							<img src="<?php echo $image[0]; ?>" width="380"  /><?php
 							if($images) echo '</div>';
 
 						endif;
 
-
 						if( $images ):
+							echo '<div class="main" style="display:none;">';
 							foreach( $images as $image ):
 							$imgUrl = wp_get_attachment_image_src($image, 'larger'); ?>
-								<div class="cheese" style="display:none;">
-									<img src="<?php echo $imgUrl[0]; ?>" />
-								</div>
+								<img src="<?php echo $image['sizes']['larger']; ?>" />
 							<?php endforeach;
+							echo '</div>';
 						endif; ?>
 
 						<p><?php the_title(); ?> <span class="Leitura"><?php the_field('subtitle'); ?></span></p>
+
 					</a>
 				</li><?php
 				$two_ids[] .= $post->ID;
 
 			endforeach;
 			wp_reset_postdata(); ?>
-			</ul>
+			<ul>
 		</div><?php
 		endif;
 
@@ -120,7 +121,7 @@ get_header();
 							if (has_post_thumbnail( $post->ID ) ):
 							$image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'med-sq' );
 
-								if($images) echo '<div class="cycled-featured main" id="main">'; ?>
+								if($images) echo '<div class="cycled-featured">'; ?>
 								<img src="<?php echo $image[0]; ?>" width="380"  /><?php
 								if($images) echo '</div>';
 
@@ -128,12 +129,12 @@ get_header();
 
 
 							if( $images ):
+								echo '<div class="main" style="display:none;">';
 								foreach( $images as $image ):
 								$imgUrl = wp_get_attachment_image_src($image, 'larger'); ?>
-									<div class="cheese" style="display:none;">
-										<img src="<?php echo $imgUrl[0]; ?>" />
-									</div>
+									<img src="<?php echo $image['sizes']['thumbnail']; ?>" />
 								<?php endforeach;
+								echo '</div>';
 							endif; ?>
 
 							<p><?php the_title(); ?> <span class="Leitura"><?php the_field('subtitle'); ?></span></p>
@@ -141,7 +142,7 @@ get_header();
 					</li><?php
 
 				endwhile; ?>
-				</ul>
+				<ul>
 			</div><?php
 		endif; ?>
 
