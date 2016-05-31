@@ -111,6 +111,7 @@
 	update_option('thumbnail_size_w', 300);
 	update_option('medium_size_w', 600);
 	update_option('large_size_w', 1024);
+	update_option( 'image_default_size', 'full' );
 
 
 //  	3 Borrar tamaño original de disco y opción
@@ -152,6 +153,7 @@
 
 	function theme_t_wp_set_image_size_options( $sizes ){
 		$sizes = array(
+			'full' => 'Full Size',
 			'thumbnail' => 'Miniatura',
 			'medium' => 'Mediana',
 			'large' => 'Grande',
