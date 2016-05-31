@@ -1,3 +1,7 @@
+/* Color rojo en ligas del blog */
+.blog_body a {color: #dd1919;}
+.blog_body a:hover {text-decoration: underline;}
+
 .back_img_quote {
     padding: 4.375em 0;
     background-position: center;
@@ -63,6 +67,11 @@ span.page-numbers.current {
 LINDA TIENE QUE LIMPIAR DESE AQUI
 Slider Arrows/Bullets
 */
+
+.project_wrapper > div > ul > li > a {position: relative; width: 100%; display: block;}
+.project_wrapper > div > ul > li > a > .main{ position: absolute; top: 0; width: 100%;}
+.project_wrapper > div > ul > li > a > .main img { position: absolute; top: 0; left: 0;}
+.project_wrapper > div > ul > li > a.hover .main { display: block!important; }
 
 a.centered-btns_nav{
     color: rgba(0,0,0,0);
