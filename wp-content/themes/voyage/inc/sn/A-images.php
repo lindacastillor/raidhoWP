@@ -354,6 +354,15 @@ elseif (get_sub_field('choose') == 'mayhem') :
 							</picture><?php
 
 
+						} elseif ($mhmNo <= 7) { ?>
+							<picture>
+								<img class="rand-grid-img-<?php echo $nhmNo; ?>"
+									 src="<?php echo $image['sizes']['larger']; ?>"
+									 <?php echo tevkori_get_srcset_string( $image['ID'], 'largest' ); ?>
+									 alt="<?php echo $image['alt']; ?>" />
+							</picture><?php
+
+
 						} elseif ($mhmNo == 8) { ?>
 							<picture>
 								<img class="rand-grid-img-<?php echo $nhmNo; ?>"
@@ -366,7 +375,7 @@ elseif (get_sub_field('choose') == 'mayhem') :
 						$mhmNo++;
 
 				endforeach;	?>
-		</div><?php
+		</div></div><?php
 	endif;
 
 
