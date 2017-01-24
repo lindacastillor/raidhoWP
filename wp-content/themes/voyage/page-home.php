@@ -16,6 +16,9 @@
 		get_template_part('inc/pg/H', 'Titling');
 	}
 
+	while ( have_rows('message_block') ) { the_row();
+		get_template_part('inc/pg/H', 'Content');
+	}
 
 	$poste = get_field('ftd-project', 'options');
 	$random = array_rand($poste, 1);

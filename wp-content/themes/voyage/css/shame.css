@@ -310,3 +310,53 @@ br::selection,
 input::selection{
   background-color: #dd1919;
   color: white;}
+
+.new_content {
+  width: 100%;
+  color: #FFFFFF;}
+
+.new_content > div {
+  display: inline-block;
+  width: 49%; }
+
+.new_content .img {
+  padding-top: 4em;
+  max-width: 100%;
+  vertical-align: bottom;}
+
+.new_content .img img {
+  max-width: 100%;
+  height: auto;}
+
+.new_content .txt {
+  padding-left: 3em;
+  padding-top: 3em;}
+
+.new_content .txt p,
+.new_content .txt h2 {
+  margin-bottom: 0; }
+
+.new_content .txt h2 {
+  margin-bottom: 0.5em;}
+
+.new_content a.button {
+  min-width: 6em;
+  font-size: 1em;
+  padding: 1em;
+  margin-bottom: 1.5em;
+  display: inline-block;
+  transition: all 0.3s;
+  color: #dd1919;
+  cursor: pointer;
+  background-color: white;
+  border: none;
+  border-radius: 5px;
+  text-shadow: none;
+  opacity: 0.9;
+}
+
+.new_content a.button:hover {
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  opacity: 1;
+}
