@@ -19,10 +19,11 @@ get_header();
 		<div class="bl-party-two-w-captions">
 			<ul><?php
 			foreach ($two_obj as $post) :
-				setup_postdata($post); ?>
+				setup_postdata($post);
+				$c_soon = get_field('coming_soon'); ?>
 
 				<li>
-					<a href="<?php the_permalink(); ?>"><?php
+					<?php if ( $c_soon && in_array('soon', $c_soon) )  { echo ''; } else { echo '<a href="'.get_the_permalink().'">'; }
 
 						// cycled images
 						$images = get_field('cycle_gallery');
@@ -44,8 +45,12 @@ get_header();
 							echo '</div>';
 						endif; ?>
 
-						<p><?php the_title(); ?> <span class="Leitura"><?php the_field('subtitle'); ?></span></p>
-					</a>
+						<p><?php
+							if( $c_soon && in_array('soon', $c_soon) ) echo '<span class="red">Coming soon: </span>';
+							the_title(); ?> <span class="Leitura"><?php the_field('subtitle'); ?></span>
+						</p>
+
+					<?php if( $c_soon && in_array('soon', $c_soon) ) { echo ''; } else { echo '</a>'; }?>
 				</li><?php
 				$two_ids[] .= $post->ID;
 
@@ -64,10 +69,11 @@ get_header();
 		<div class="bl-party-three-w-captions">
 			<ul><?php
 			foreach ($three_obj as $post) :
-				setup_postdata($post); ?>
+				setup_postdata($post);
+				$c_soon2 = get_field('coming_soon'); ?>
 
 				<li>
-					<a href="<?php the_permalink(); ?>"><?php
+					<?php if ( $c_soon && in_array('soon', $c_soon2) )  { echo ''; } else { echo '<a href="'.get_the_permalink().'">'; }
 
 						// cycled images
 						$images = get_field('cycle_gallery');
@@ -90,9 +96,12 @@ get_header();
 							echo '</div>';
 						endif; ?>
 
-						<p><?php the_title(); ?> <span class="Leitura"><?php the_field('subtitle'); ?></span></p>
+						<p><?php
+							if( $c_soon2 && in_array('soon', $c_soon2) ) echo '<span class="red">Coming soon: </span>';
+							the_title(); ?> <span class="Leitura"><?php the_field('subtitle'); ?>no</span>
+						</p>
 
-					</a>
+					<?php if( $c_soon2 && in_array('soon', $c_soon2) ) { echo ''; } else { echo '</a>'; }?>
 				</li><?php
 				$two_ids[] .= $post->ID;
 
@@ -110,10 +119,11 @@ get_header();
 		if(have_posts()): ?>
 			<div class="bl-party-four-w-captions">
 				<ul><?php
-				while(have_posts()): the_post(); ?>
+				while(have_posts()): the_post();
+				$c_soon2 = get_field('coming_soon'); ?>
 
 					<li>
-						<a href="<?php the_permalink(); ?>"><?php
+						<?php if ( $c_soon && in_array('soon', $c_soon) )  { echo ''; } else { echo '<a href="'.get_the_permalink().'">'; }
 
 							// cycled images
 							$images = get_field('cycle_gallery');
@@ -137,8 +147,11 @@ get_header();
 								echo '</div>';
 							endif; ?>
 
-							<p><?php the_title(); ?> <span class="Leitura"><?php the_field('subtitle'); ?></span></p>
-						</a>
+							<p><?php
+								if( $c_soon && in_array('soon', $c_soon) ) echo '<span class="red">Coming soon: </span>';
+								the_title(); ?> <span class="Leitura"><?php the_field('subtitle'); ?></span>
+							</p>
+							<?php if( $c_soon && in_array('soon', $c_soon) ) { echo ''; } else { echo '</a>'; }?>
 					</li><?php
 
 				endwhile; ?>
