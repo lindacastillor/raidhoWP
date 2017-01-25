@@ -20,12 +20,18 @@
 	} else {
 		$image = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'medium');
 		$imgArray = get_the_image( array( 'image_scan' => true, 'format' => 'array' ) );
+		$c_soon = get_field('coming_soon');
 
 		if($image) { ?>
-			<a href="<?php the_permalink(); ?>">
-				<img src="<?php echo $image[0]; ?>" />
-			</a><?php
-
+			<?php if ( $c_soon && in_array('soon', $c_soon) ) { ?>
+				<div>
+					<img src="<?php echo $image[0]; ?>" />
+				</div>
+			<?php } else { ?>
+				<a href="<?php the_permalink(); ?>">
+					<img src="<?php echo $image[0]; ?>" />
+				</a>
+			<?php } ?> <?php
 		} elseif($imgArray){ ?>
 			<a href="<?php the_permalink(); ?>"> <?php
 				get_the_image( array( 'size' => 'thumbnail', 'image_scan' => true, 'link_to_post' => false ) ); ?>
@@ -39,13 +45,11 @@
 
 
 		if($postType == 'work') {
-			echo '<p class="small_title"><a href="'.get_the_permalink().'">';
 			if(get_field('new')){
-				echo '<span class="red">New Project:</span> ';
-			} else {
-				echo '<span class="red">Project:</span> ';
+				echo '<p class="small_title"><a href="'.get_the_permalink().'"><span class="red">New Project:</span>'. get_the_title().' </a></p>';
+			} elseif ( $c_soon && in_array('soon', $c_soon) ) {
+				echo '<p class="small_title"><span class="red">Coming soon: </span>'. get_the_title().' </p>';
 			}
-			echo get_the_title().'</a></p>';
 		} elseif($postType == 'blog') {
 			echo '<p><a href="'.get_the_permalink().'">'.get_the_title().'</a></p>';
 		} else {
